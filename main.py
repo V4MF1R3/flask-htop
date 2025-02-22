@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 @app.route('/htop')
 def htop():
-    name = "Vaibhav Pant"  # Replace with your full name
-    username = os.getenv("USER", "Unknown")  # Get system username
-    ist_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)  # Convert to IST
-    top_output = subprocess.getoutput("top -b -n 1 | head -10")  # Get top output
+    name = "Vaibhav Pant"
+    username = os.getenv("USER", "Unknown")
+    ist_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+    top_output = subprocess.getoutput("top -b -n 1 | head -10")
 
     return f"""
     <h1>System Info</h1>
